@@ -2,3 +2,6 @@ This is the Revolut Home Task that was given to me when I interviewed at Revolut
 The challenge had two sub problems:
 1. Doing Data Analysis to understand why KYC completion rates are low.
 2. Using SQL and other methods to detect potential fraudsters in the signup process.
+
+For the first task, various python analysis tools were used like pandas, numpy, seaborn and matplotlib.
+For the second task, a random forest model was created and SQL queries were also used in the process.
