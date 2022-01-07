@@ -1,0 +1,5 @@
+DATABASE_USER = 'postgres'
+DATABASE_PW = 'abc123'
+DATABASE_NAME = 'frauds_3'
+DATABASE_PORT = '5432'
+DATABASE_URL = 'postgresql+psycopg2://{}:{}@localhost:{}/{}'.format(DATABASE_USER,DATABASE_PW,DATABASE_PORT,DATABASE_NAME)
