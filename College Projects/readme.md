@@ -1,0 +1,4 @@
+This directory has 3 sub directories which are about three college projects that my friends and I did as a part of our college curriculum. I will briefly outline all of them here:
+1. The directory Compiler_Project contains all the files that are related to the project for the course Compiler Construction completed in BITS Pilani. The task was to build a lexer for our compiler and the language allowed for use was C programming language.
+2. The IR Assignment Final directory contains all files(except data files) that are from the Information Retrieval Course in BITS Pilani. We were tasked with the implementation of IBM Model 1 for statistical machine translation.
+3. Logic_Programming_Using_Prolog: This directory contains all the code and assignment specification related to an assigment given as a part of the Logic in Computer Science Course in BITS Pilani. The langauge used for the project was SWI Prolog.
