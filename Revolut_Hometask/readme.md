@@ -1,3 +1,5 @@
+#Revolut Home Task
+
 This is the Revolut Home Task that is given when one interviews at Revolut. The data and the details of the challenge are widely available on the internet. The exact same challenge is also posed by Revolut's competitor N26. This project is a personal exploration project that I undertook during college while preparing for interviews with Revolut.
 The challenge has two sub problems:
 1. Doing Data Analysis to understand why KYC completion rates are low.
