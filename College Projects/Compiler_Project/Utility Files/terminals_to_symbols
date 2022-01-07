@@ -1,0 +1,195 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct{
+    Tkn identified_token;
+    char *name;
+}symbol_mapping;
+
+symbol_mapping *terminal_symbol_map=(symbol_mapping*)malloc(55*sizeof(symbol_mapping)); /*Need to add the number of symbol mappings that we are dealing with.
+
+    terminal_symbol_map[0].identified_token=OR;   /*mapping OR */
+    terminal_symbol_map[0].name="OR";
+
+    terminal_symbol_map[1].identified_token=ID;   /*mapping ID */
+    terminal_symbol_map[1].name="ID";
+
+    terminal_symbol_map[2].identified_token=MUL;   /*mapping MUL */
+    terminal_symbol_map[2].name="*";
+
+    terminal_symbol_map[3].identified_token=RNUM;   /*mapping RNUM */
+    terminal_symbol_map[3].name="RNUM";
+
+    terminal_symbol_map[4].identified_token=LT;   /*mapping LT */
+    terminal_symbol_map[4].name="<";
+
+    terminal_symbol_map[5].identified_token=AND;   /*mapping AND */
+    terminal_symbol_map[5].name="AND";
+
+    terminal_symbol_map[6].identified_token=PRINT;   /*mapping PRINT */
+    terminal_symbol_map[6].name="print";
+
+    terminal_symbol_map[7].identified_token=DRIVER;   /*mapping DRIVER */
+    terminal_symbol_map[7].name="driver";
+
+    terminal_symbol_map[8].identified_token=INPUT;   /*mapping INPUT */
+    terminal_symbol_map[8].name="input";
+
+    terminal_symbol_map[9].identified_token=CASE;   /*mapping CASE */
+    terminal_symbol_map[9].name="case";
+
+    terminal_symbol_map[10].identified_token=PARAMETERS;   /*mapping PARAMETERS */
+    terminal_symbol_map[10].name="parameters";
+
+    terminal_symbol_map[11].identified_token=DEFAULT;   /*mapping DEFAULT */
+    terminal_symbol_map[11].name="default";
+
+    terminal_symbol_map[12].identified_token=DRIVERENDDEF;   /*mapping DRIVERENDDEF */
+    terminal_symbol_map[12].name=">>>";
+
+    terminal_symbol_map[13].identified_token=GT;   /*mapping OR */
+    terminal_symbol_map[13].name=">";
+
+    terminal_symbol_map[14].identified_token=MODULE;   /*mapping MODULE */
+    terminal_symbol_map[14].name="module";
+
+    terminal_symbol_map[15].identified_token=PROGRAM;   /*mapping PROGRAM */
+    terminal_symbol_map[15].name="program";
+
+    terminal_symbol_map[16].identified_token=NE;   /*mapping NE */
+    terminal_symbol_map[16].name="!=";
+
+    terminal_symbol_map[17].identified_token=FALSE;   /*mapping FALSE */
+    terminal_symbol_map[17].name="false";
+
+    terminal_symbol_map[18].identified_token=SEMICOL;   /*mapping SEMICOL */
+    terminal_symbol_map[18].name=";";
+
+    terminal_symbol_map[19].identified_token=SQBC;   /*mapping SQBC */
+    terminal_symbol_map[19].name="]";
+
+    terminal_symbol_map[20].identified_token=GE;   /*mapping GE */
+    terminal_symbol_map[20].name=">=";
+
+    terminal_symbol_map[21].identified_token=ENDDEF;   /*mapping ENDDEF */
+    terminal_symbol_map[21].name=">>";
+
+    terminal_symbol_map[22].identified_token=INTEGER;   /*mapping INTEGER */
+    terminal_symbol_map[22].name="integer";
+
+    terminal_symbol_map[23].identified_token=USE;   /*mapping OR */
+    terminal_symbol_map[23].name="use";
+
+    terminal_symbol_map[24].identified_token=BREAK;   /*mapping BREAK */
+    terminal_symbol_map[24].name="break";
+
+    terminal_symbol_map[25].identified_token=START;   /*mapping START */
+    terminal_symbol_map[25].name="start";
+
+    terminal_symbol_map[26].identified_token=RETURNS;   /*mapping RETURNS */
+    terminal_symbol_map[26].name="returns";
+
+    terminal_symbol_map[27].identified_token=TAKES;   /*mapping TAKES */
+    terminal_symbol_map[27].name="takes";
+
+    terminal_symbol_map[28].identified_token=BOOLEAN;   /*mapping BOOLEAN */
+    terminal_symbol_map[28].name="boolean";
+
+    terminal_symbol_map[29].identified_token=COMMA;   /*mapping COMMA */
+    terminal_symbol_map[29].name=",";
+
+    terminal_symbol_map[30].identified_token=FOR;   /*mapping FOR */
+    terminal_symbol_map[30].name="for";
+
+    terminal_symbol_map[31].identified_token=SQBO;   /*mapping SQBO */
+    terminal_symbol_map[31].name="[";
+
+    terminal_symbol_map[32].identified_token=TRUE;   /*mapping TRUE */
+    terminal_symbol_map[32].name="true";
+
+    terminal_symbol_map[33].identified_token=EQ;   /*mapping EQ */
+    terminal_symbol_map[33].name="==";
+
+    terminal_symbol_map[34].identified_token=SWITCH;   /*mapping SWITCH */
+    terminal_symbol_map[34].name="switch";
+
+    terminal_symbol_map[35].identified_token=REAL;   /*mapping REAL */
+    terminal_symbol_map[35].name="real";
+
+    terminal_symbol_map[36].identified_token=RANGEOP;   /*mapping OR */
+    terminal_symbol_map[36].name="..";
+
+    terminal_symbol_map[37].identified_token=ARRAY;   /*mapping ARRAY */
+    terminal_symbol_map[37].name="array";
+
+    terminal_symbol_map[38].identified_token=BC;   /*mapping BC */
+    terminal_symbol_map[38].name=")";
+
+    terminal_symbol_map[39].identified_token=WHILE;   /*mapping WHILE */
+    terminal_symbol_map[39].name="WHILE";
+
+    terminal_symbol_map[40].identified_token=NUM;   /*mapping NUM */
+    terminal_symbol_map[40].name="num";
+
+    terminal_symbol_map[41].identified_token=DECLARE;   /*mapping DECLARE */
+    terminal_symbol_map[41].name="declare";
+
+    terminal_symbol_map[42].identified_token=LE;   /*mapping LE */
+    terminal_symbol_map[42].name="<=";
+
+    terminal_symbol_map[43].identified_token=COLON;   /*mapping COLON */
+    terminal_symbol_map[43].name=":";
+
+    terminal_symbol_map[44].identified_token=IN;   /*mapping IN*/
+    terminal_symbol_map[44].name="in";
+
+    terminal_symbol_map[45].identified_token=DIV;   /*mapping DIV */
+    terminal_symbol_map[45].name="/";
+
+    terminal_symbol_map[46].identified_token=DRIVERDEF;   /*mapping DRIVERDEF */
+    terminal_symbol_map[46].name="<<<";
+
+    terminal_symbol_map[47].identified_token= WITH;   /*mapping  WITH */
+    terminal_symbol_map[47].name="with";
+
+    terminal_symbol_map[48].identified_token=BO;   /*mapping BO */
+    terminal_symbol_map[48].name="(";
+
+    terminal_symbol_map[49].identified_token=GET_VALUE;   /*mapping GET_VALUE */
+    terminal_symbol_map[49].name="get_value";
+
+    terminal_symbol_map[50].identified_token=END;   /*mapping END */
+    terminal_symbol_map[50].name="end";
+
+    terminal_symbol_map[51].identified_token=ASSIGNOP;   /*mapping ASSIGNOP */
+    terminal_symbol_map[51].name=":=";
+
+    terminal_symbol_map[52].identified_token=PLUS;   /*mapping PLUS */
+    terminal_symbol_map[52].name="+";
+
+    terminal_symbol_map[53].identified_token=MINUS;   /*mapping MINUS */
+    terminal_symbol_map[53].name="-";
+
+    terminal_symbol_map[54].identified_token=DEF;   /*mapping DEF */
+    terminal_symbol_map[54].name="def";
+
+char* return_token_symbol(Tkn token){
+    int p=0;
+    for(p=0;p<55;p++){
+        if(terminal_symbol_map[i].identified_token==token){
+            return terminal_symbol_map[i].name
+        }
+    }
+    return NULL;
+}
+
+Tkn* return_token_from_given_symbol(char* string){
+    int p=0;
+    for(p=0;p<55;p++){
+        if(stricmp(terminal_symbol_map[p].name,string)==0){
+            return &terminal_symbol_map[p].identified_token;
+        }
+    }
+    return NULL;
+}
