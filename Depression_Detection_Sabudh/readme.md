@@ -1,5 +1,5 @@
-#Depression Detection Using AI
-##There are 28 code files in this directory. Here I provide with a brief description of what each file is all about.
+**Depression Detection Using AI**
+There are 28 code files in this directory. Here I provide with a brief description of what each file is all about.
 1. Basic CNN-AU plots: In depression detection, Action Units are proven to be good indicators of depression, particularly AU01, AU04, AU11, AU15. A basic CNN based model with an accuracy of 82.35% was created based on the plots of the intensities of these action units in the video over time.
 2. Converting mp3 to wav: This notebook deals with the use of Pydub to convert audio from mp3 into wav so that it can be processed by the OpenSmile Library.
 3. Depression Audio Extraction: This notebook deals with the extraction of audio from a video that has audio embedded in it.
